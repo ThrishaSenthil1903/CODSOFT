@@ -16,7 +16,7 @@ public class NumberGame {
             int attemptsLeft = 5;
             boolean guessedCorrectly = false;
 
-            System.out.println("\n📍 Round " + (roundsPlayed + 1));
+            System.out.println("\n Round " + (roundsPlayed + 1));
             System.out.println("Guess the number between 1 and 100. You have " + attemptsLeft + " attempts!");
 
             while (attemptsLeft > 0 && !guessedCorrectly) {
@@ -24,13 +24,13 @@ public class NumberGame {
                 int userGuess = scanner.nextInt();
 
                 if (userGuess == numberToGuess) {
-                    System.out.println("🎉 Correct! You guessed the number.");
+                    System.out.println(" Correct! You guessed the number.");
                     guessedCorrectly = true;
                     totalScore += attemptsLeft * 10; // Score based on remaining attempts
                 } else if (userGuess < numberToGuess) {
-                    System.out.println("🔼 Too low!");
+                    System.out.println(" Too low!");
                 } else {
-                    System.out.println("🔽 Too high!");
+                    System.out.println("Too high!");
                 }
 
                 attemptsLeft--;
@@ -40,21 +40,22 @@ public class NumberGame {
             }
 
             if (!guessedCorrectly) {
-                System.out.println("❌ Out of attempts! The correct number was: " + numberToGuess);
+                System.out.println(" Out of attempts! The correct number was: " + numberToGuess);
             }
 
             roundsPlayed++;
-            System.out.print("\n👉 Do you want to play another round? (yes/no): ");
+            System.out.print("\n Do you want to play another round? (yes/no): ");
             scanner.nextLine(); // Consume newline
             String response = scanner.nextLine().trim().toLowerCase();
             playAgain = response.equals("yes");
         }
 
-        System.out.println("\n🏁 Game Over!");
+        System.out.println("\n Game Over!");
         System.out.println("Rounds played: " + roundsPlayed);
         System.out.println("Your total score: " + totalScore);
-        System.out.println("✨ Thanks for playing!");
+        System.out.println("Thanks for playing!");
         scanner.close();
     }
 
 }
+
